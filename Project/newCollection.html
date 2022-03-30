@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html class="document" lang="en">
+    <title>Your Game Collection</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <head></head>
+    <body class="body">
+        <div class="header">
+            <div class="logoContainer">
+                <img src="Images\SiteLogo.png" alt="" width="100" height="100">
+            </div>
+            <div class="descriptionContainer">
+                <p class="descriptionText">Your Game Collection</p>
+                <div class="currentLocationTextContainer">
+                    <p class="currentLocationText">New Collection</p>
+                </div>
+                
+            </div>  
+        </div>
+        <div class="navBarContainer">
+            <a href="index.html"><p>Home</p></a>
+            <a href="newCollection.html"><p>New Collection</p></a>
+            <a href=""><p>Open Collection</p></a>
+        </div>
+        <div class="columnDescriptor">
+            <p class="columnDescriptorText">Add A Console</p>
+            <p class="columnDescriptorText">Select A Console</p>
+            <p class="columnDescriptorText columnGameDiscriptorText">Games</p>
+        </div>
+      
+        <div class="contentContainer">
+            <div class="consoleManage">
+                <label for="consoleSelection" id="labelText">Select a Console:</label>
+                <select id="consoleSelection">   
+                    <option>NES</option>
+                    <option>Super Nintendo</option>
+                    <option>Nintendo 64</option>
+                    <option>Gamecube</option>
+                    <option>Nintendo Wii</option>
+                    <option>Playstation 1</option>
+                    <option>Playstation 2</option>
+                    <option>Sega Genesis</option>
+                    <option>Sega Dreamcast</option>
+                    <option>Xbox</option>
+                    <option>Xbox 360</option>
+                    <option>Xbox One</option>
+                    <option>Custom Console</option>
+                </select>
+                <label for="userCustomConsole" class="customConsoleInput" id="labelText">Enter Custom Console:</label>
+                <input id="userCustomConsole" type="text" value="" class="customConsoleInput">
+                <button type="submit" id="addConsoleButton" class="addConsoleButton">Add Console</button>
+            </div>
+            <div class="consoleSelect">
+            </div>
+            <div class="consoleGamesContainer">
+                <div class="consoleGamesContent"></div>
+                <div class="consoleGamesInput">
+                    <label for="gameInput" id="labelText">Enter a New Game</label>
+                    <input id="gameInput" class="gameInput" type="text" >
+                    <button type="submit" id="addGameButton" class="addGameButton">Add Game</button>
+                </div>
+            </div>
+        </div>
+       
+        <footer></footer>
+        <script src="game-management.js"></script>
+    </body>
+    
+</html>

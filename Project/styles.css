@@ -1,0 +1,291 @@
+.customConsoleInput {
+    display: none;
+}
+
+.document {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    background-image: url('Images/Background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh ;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    min-width: 600px;
+    height: 100vh;
+    background-color: black;
+    margin: 0;
+}
+
+/*Heading Styling*/
+.header {
+    display: flex;
+    height: 15%;
+}
+.logoContainer {
+    display: flex;
+    height: 100%;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+    background-color: #4e8ca5;
+    min-width: 100px;
+}
+.descriptionContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    background-color: #4e8ca5;
+}
+.descriptionText {
+    display: flex;
+    color: white;
+    width: 100%;
+    height: 50%;
+    font-weight: bold;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-items: center;
+    font-size: 30px;
+}
+.currentLocationTextContainer {
+    display: flex;
+    width: 90%;
+    height: 50%;
+    justify-content: left;
+    padding-left: 20px;
+    border-radius: 35px;
+    background-color: black;
+}
+.currentLocationText{
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*Nav Bar Styling*/
+.navBarContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content:flex-start;
+    width: 100%;
+    height: min-content;
+    background-color: #a3c9fe;
+    z-index: 2;
+    filter: drop-shadow(0px 4px 0.5rem black);
+}
+.navBarContainer p {
+    text-align: center;
+    font-size: 15px;
+    height: 15px;
+    padding-left: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.navBarContainer a{
+    text-decoration: none;
+}
+
+/*Handling Nav Bar Interaction*/
+.navBarContainer a {
+    color: black;
+}
+.navBarContainer a:hover {
+    color: white;
+}
+
+/*Main Contents Styling, first html file*/
+.contentContainer {
+    display: flex;
+    flex: 18;
+    background-color: black;
+    justify-content:space-evenly;
+}
+.collectionSelectionContainer {
+    display: flex;
+    flex-direction: column;
+}
+.collectionText {
+    text-align: center;
+    
+}
+.collectionSelectionContainer a img{
+    transition: all 0.5s;
+}
+
+.collectionSelectionContainer a img:hover {
+    transform:scale(105%);
+}
+
+/*newCOllection.html Styles*/
+/*Sections for User Control of Games and Respective Consoles*/
+.columnDescriptor {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-bottom: 1px solid white;
+    filter: drop-shadow(0px 4px 0.5rem black);
+    z-index: 4;
+}
+.columnDescriptorText {
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    color: white;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.consoleManage {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: gray;
+    
+    filter: drop-shadow(0px 4px 10px black);
+}
+.consoleSelect {
+    display: flex;
+    flex: 1;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ccdee1;
+    border: 1px solid black;
+    padding-top: 10px;
+    
+   
+}
+.consoleGamesContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: #d5eeff;
+    
+}
+
+/*Within consoleGamesContainer*/
+.consoleGamesContent {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    background-color: gray;
+    z-index: 0;
+    filter: drop-shadow(0px 4px 10px black);
+    align-items: left;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.consoleGamesInput {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #5b5b5b;
+    border-top: 1px solid black;
+}
+#gameText {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #444444;
+    text-align: left;
+    padding-left: 10px;
+}
+/*Custom Console Input*/
+/*DONT MOVE THIS*/
+
+
+/*List of Consoles User Has Added to Console Select*/
+.consoleContainer {
+    display: flex;
+    height: 40px;
+    width: 90%;
+    border: 2px solid black;
+    margin: 5px;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 5px;
+    transition: .25s;
+}
+.consoleContainer:hover {
+    transform: scale(105%);
+    filter: drop-shadow(0px 4px 5px #d5eeff);
+}
+.consoleContainer:active {
+    transform: scale(95%);
+}
+.consoleImageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+.consoleTextContainer {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex: 4;
+}
+
+/*Footer Styling*/
+footer {
+    display: flex;
+    flex: 1;
+    background-color: #4e8ca5;
+    filter: drop-shadow(0px -4px 0.5rem black);
+    z-index: 3;
+}
+
+/*Label Text Styling*/
+#labelText {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.consoleName {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+}
+.consoleXboxName {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #1fdc00;
+    font-size: 18px;
+}
+
+/*Console Nodes Drop Shadows*/
+.xboxConsole {
+    background-color: #5b5b5b;
+    filter: drop-shadow(0px 2px 0.25rem green);
+}
+.xbox360Console {
+    background-color: #f6ffe2;
+    filter: drop-shadow(0px 2px 0.25rem limegreen);
+}
+.gamecubeConsole {
+    background-color: #f4ebff;
+    filter: drop-shadow(0px 2px 0.25rem purple);
+}
+.playstationConsole {
+    background-color: #eeeeee;
+    filter: drop-shadow(0px 2px 0.25rem black);
+}
+.genericConsole{
+    background-color: #eeeeee;
+    filter: drop-shadow(0px 2px 0.25rem black);
+}
+
