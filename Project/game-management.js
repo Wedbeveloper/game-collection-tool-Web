@@ -292,7 +292,7 @@ function getGames(passedConsoleName) {
 function gameSearch(gameName) {
     let changedGameName = gameName.replace(/\s/g, '-')
 
-    $.get('https://api.rawg.io/api/games/' + changedGameName +'?key=7a982848c3bd47fda3792ad0e3b19a0c', function(game) {
+    $.get('https://api.rawg.io/api/games/' + changedGameName +'?key= ***OMITTED FOR SECURITY*** ', function(game) {
         console.log(game.name)
         if(game.name){
             let dropBox = document.querySelector("#gameGot")
