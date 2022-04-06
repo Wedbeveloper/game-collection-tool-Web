@@ -27,6 +27,7 @@ consoleTextInput.addEventListener("keyup", function(){
 //Making sure game name is updated whenever new key pressed in textbox
 gameTextInput.addEventListener("keyup", function(){
     newGameName = gameTextInput.value
+    gameSearch(newGameName)
 })
 
 //Object list to update each console's game list
@@ -58,6 +59,7 @@ addConsoleButton.addEventListener("click", function() {
 //Set games for the currently selected console which is set by clicking a console
 addGameButton.addEventListener("click", function() {
     setGames(currConsole)
+    
 })
 
 function addConsole (selectedConsole){
@@ -250,11 +252,17 @@ function setGames(passedConsole) {
     let currConsoleGameList = consoleMap.get(passedConsole)
     console.log("In console " + passedConsole)
 
-    //Add game from text box to console's keys
-    currConsoleGameList.push(newGameName)
-    console.log(consoleMap.get(passedConsole))
+    let changedGameName = newGameName.replace(/\s/g, '-')
 
-    getGames(passedConsole)
+    //Add game from text box to console's key
+    //Search database for game name and push the whole object as value for current system
+    $.get('https://api.rawg.io/api/games/' + changedGameName +'?key=7a982848c3bd47fda3792ad0e3b19a0c', function(game) {
+        
+        console.log(game.name)
+        currConsoleGameList.push(game)
+        getGames(passedConsole)
+    }) 
+    console.log(consoleMap.get(passedConsole))
 }
 
 function getGames(passedConsoleName) {
@@ -271,7 +279,7 @@ function getGames(passedConsoleName) {
     if (currConsole.length != 0) {
         console.log(currConsole.length)
         currConsole.forEach(element => {
-            newGame.innerHTML += element + "<br>"
+            newGame.innerHTML += element.name + "<br>"
         });
     }
     
@@ -279,4 +287,32 @@ function getGames(passedConsoleName) {
         insertPoint.removeChild(insertPoint.firstChild)
     }
     insertPoint.appendChild(newGame)
+}
+
+function gameSearch(gameName) {
+    let changedGameName = gameName.replace(/\s/g, '-')
+
+    $.get('https://api.rawg.io/api/games/' + changedGameName +'?key=7a982848c3bd47fda3792ad0e3b19a0c', function(game) {
+        console.log(game.name)
+        if(game.name){
+            let dropBox = document.querySelector("#gameGot")
+            let optionList = dropBox.children
+            let listHasGame = false;
+
+            for(i=0; i < optionList.length; i++) {
+                if (optionList[i].value === game.slug) {
+                    listHasGame = true;
+                    break;
+                }
+            }
+
+            if (!listHasGame) {
+                let newOption = document.createElement("option")
+                newOption.value = game.slug
+                dropBox.appendChild(newOption)
+            }
+            
+        }
+    }) 
+    
 }
